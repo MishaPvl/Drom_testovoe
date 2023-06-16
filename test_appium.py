@@ -1,6 +1,7 @@
 from appium import webdriver
 from appium.webdriver.common.mobileby import MobileBy
 import time
+from locators.calculator_locators import CalculatorLocators
 
 
 def test_start():
@@ -16,16 +17,13 @@ def test_start():
     driver = webdriver.Remote(url, capabilities)
 
     try:
-        digit1_btn = driver.find_element(
-            MobileBy.XPATH, '//android.widget.EditText[@content-desc="inputFieldLeft"]')
+        digit1_btn = driver.find_element(*CalculatorLocators.LEFT_INPUT_FIELD)
         digit1_btn.click()
         digit1_btn.send_keys(7)
-        digit2_btn = driver.find_element(
-            MobileBy.XPATH, '//android.widget.EditText[@content-desc="inputFieldRight"]')
+        digit2_btn = driver.find_element(*CalculatorLocators.RIGHT_INPUT_FIELD)
         digit2_btn.click()
         digit2_btn.send_keys(3)
-        first = driver.find_element(
-            MobileBy.XPATH, '//android.widget.Button[@content-desc="subtractButton"]')
+        first = driver.find_element(*CalculatorLocators.DIVISION_BUTTON)
         first.click()
         time.sleep(5)
 
