@@ -21,6 +21,6 @@ class BasePage():
         result = self.find_element(locator).text
         return result
 
-    def element_is_displayed(self, locator):
+    def is_element_displayed(self, locator):
         element = self.find_element(locator)
         return element.is_displayed()

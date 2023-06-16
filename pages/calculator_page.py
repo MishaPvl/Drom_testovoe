@@ -22,10 +22,8 @@ class CalculatorPage(BasePage):
         self.click_button(CalculatorLocators.RESET_BUTTON)
 
     def check_initial_input_fields_empty(self):
-        first_value = self.find_element(
-            CalculatorLocators.LEFT_INPUT_FIELD).text
+        first_value = self.find_element(CalculatorLocators.LEFT_INPUT_FIELD).text
         assert first_value == '', 'Левое поле не пустое'
 
-        second_value = self.find_element(
-            CalculatorLocators.RIGHT_INPUT_FIELD).text
+        second_value = self.find_element(CalculatorLocators.RIGHT_INPUT_FIELD).text
         assert second_value == '', 'Правое поле не пустое'
