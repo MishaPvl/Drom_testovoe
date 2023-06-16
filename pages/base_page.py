@@ -18,4 +18,9 @@ class BasePage():
         button.click()
 
     def get_text(self, locator):
-        text = self.find_element(locator).text
+        result = self.find_element(locator).text
+        return result
+
+    def element_is_displayed(self, locator):
+        element = self.find_element(locator)
+        return element.is_displayed()
