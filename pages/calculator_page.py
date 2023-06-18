@@ -33,6 +33,11 @@ class CalculatorPage(BasePage):
         self.enter_number(CalculatorLocators.RIGHT_INPUT_FIELD, right_operand)
         self.click_addition_button()
 
+    def perform_subtraction(self, left_operand, right_operand):
+        self.enter_number(CalculatorLocators.LEFT_INPUT_FIELD, left_operand)
+        self.enter_number(CalculatorLocators.RIGHT_INPUT_FIELD, right_operand)
+        self.click_subtraction_button()
+
     def verify_result(self, expected_result):
         result = self.get_result_after_equal_sign()
         assert result == expected_result, f'Ожидаемый результат {expected_result} отличается от фактического {result}'
