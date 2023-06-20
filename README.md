@@ -33,6 +33,8 @@
     
 ### Настройки проекта
 Для смены телефона необходимо зайти в файл conftest.py и сменить
+   ```
    'platformName': 'Android',
    'deviceName': 'Google_Pixel_3_XL'
+```
 На нужные вам
