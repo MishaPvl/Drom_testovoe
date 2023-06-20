@@ -65,12 +65,14 @@ class CalculatorPage(BasePage):
 
     def verify_result(self, expected_result):
         # Проверяет, что ответ совпадает с ожидаемым (число после знака =)
-        result = self.get_result_after_equal_sign()
+        result_value = self.get_result_after_equal_sign()
+        result = self.format_decimal_value(result_value)
         assert result == expected_result, f'Ожидаемый результат {expected_result} отличается от фактического {result}'
 
     def verify_result_field(self, expected_result):
         # Проверяет полный текст в поле вывода
-        result = self.get_text(CalculatorLocators.RESULT_TEXT)
+        result_value = self.get_text(CalculatorLocators.RESULT_TEXT)
+        result = self.format_decimal_value(result_value)
         assert result == expected_result, f'Ожидаемый результат {expected_result} отличается от фактического {result}'
 
     def verify_error_message(self, expected_error_message):
@@ -87,3 +89,13 @@ class CalculatorPage(BasePage):
             return number_after_equal_sign
         else:
             return None
+        
+    def format_decimal_value(self, value):
+    # Замените запятую на точку в числе, если она присутствует
+    # Без этой функции часть тестов может не проходить на телефонах из-за разницы в отображении формата чисел
+    # Например я прогонял все тесты на телефоне с английской локализацией и все тесты проходили, 
+    # на телефоне с русской локализацией все эти тесты упали.
+        if ',' in value:
+            value = value.replace(',', '.')
+
+        return value
