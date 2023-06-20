@@ -16,7 +16,7 @@
 - Python: для написания и запуска автоматизированных тестов.
 
 ### Инструкцию по установке всех этих инструментов можно найти на следующем сайте:
-    * https://moonz.pro/appium-genymotion-python-polnyj-gajd/
+- https://moonz.pro/appium-genymotion-python-polnyj-gajd/
     
 ### Установка и запуск
 
