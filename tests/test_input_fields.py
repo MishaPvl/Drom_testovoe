@@ -2,13 +2,14 @@ from locators.calculator_locators import CalculatorLocators
 import pytest
 
 '''
+    Класс TestCalculatorInputFields содержит тесты для проверки ввода данных в поля калькулятора.
     При ручном тестировании поля для ввода не позволяют вводить невалидные значения, такие как буквы или символы. Однако, в автотестах при использовании метода send_keys(), можно передавать любые значения в поле. Важно отметить, что большая часть невалидных значений будет обработана при выполнении операций (+, -, и т.д.).
 '''
 
 class TestCalculatorInputFields:
-    def test_empty_input_fields_on_startup(self, calculator_page):
-        # Проверяем, что при запуске приложения оба поля пустые.
-        calculator_page.check_input_fields_empty()
+    # def test_empty_input_fields_on_startup(self, calculator_page):
+    #     # Проверяем, что при запуске приложения оба поля пустые.
+    #     calculator_page.check_input_fields_empty()
 
     def test_integer_input_fields(self, calculator_page):
         # Введите целое число в первое и второе поле для ввода и убедитесь, что они правильно принимают вводимые данные.

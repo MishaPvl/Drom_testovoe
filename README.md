@@ -9,29 +9,32 @@
 
 ### Для запуска проекта и выполнения тестов вам понадобятся следующие компоненты:
 
-- VirtualBox: для запуска виртуальной машины, если необходимо использовать эмулятор Genymotion.
-- Genymotion: для запуска виртуального устройства Android, на котором будет тестироваться калькулятор.
-- Appium Server GUI: инструмент для автоматизации тестирования мобильных приложений.
-- Android SDK: для установки Android Studio и получения необходимых компонентов для разработки и тестирования Android-приложений.
-- Java SE Development Kit (JDK): для выполнения Java-кода и запуска Android-приложений.
-- Python: для написания и запуска автоматизированных тестов.
+- [VirtualBox](https://www.oracle.com/virtualization/technologies/vm/downloads/virtualbox-downloads.html?source=:ow:o:p:nav:mmddyyVirtualBoxHero&intcmp=:ow:o:p:nav:mmddyyVirtualBoxHero): для запуска виртуальной машины, если необходимо использовать эмулятор Genymotion.
+- [Genymotion](https://www.genymotion.com/download/): для запуска виртуального устройства Android, на котором будет тестироваться калькулятор.
+- [Appium Server GUI](https://github.com/appium/appium-desktop/releases/): инструмент для автоматизации тестирования мобильных приложений.
+- [Android SDK](https://developer.android.com/studio): для установки Android Studio и получения необходимых компонентов для разработки и тестирования Android-приложений.
+- [Java SE Development Kit (JDK)](https://www.oracle.com/java/technologies/downloads/): для выполнения Java-кода и запуска Android-приложений.
+- [Python](https://www.python.org/downloads/): для написания и запуска автоматизированных тестов.
 
 ### Инструкцию по установке всех этих инструментов можно найти на следующем сайте:
 - https://moonz.pro/appium-genymotion-python-polnyj-gajd/
     
 ### Установка и запуск
-
+- Выполните команду git clone, чтобы скопировать репозиторий:
+    `git clone https://github.com/MishaPvl/Drom_testovoe.git`
 - Создайте виртуальное окружение для проекта, используя команду: 
     `python -m venv myenv`
 - Активируйте виртуальное окружение для проекта:
     `myenv\Scripts\activate`
 - Установите зависимости проекта из файла requirements.txt, выполнив команду:
     `pip install -r requirements.txt`
-- Запустите эмулятор в Genymotion и включите сервер Appium Server
-- Установите app-debug.apk на устройство
+- Настройте эмулятор и введите данные смартфона в `conftest.py`. В этом файле вы можете указать конфигурацию эмулятора, такую как IP-адрес и порт сервера `Appium`, а также данные смартфона, такие как имя устройства, версия Android и другие параметры.
+- Запустите эмулятор в `Genymotion` или другой программе эмуляции Android-устройств и включите сервер Appium. Убедитесь, что эмулятор и сервер `Appium` работают корректно.
+- Установите app-debug.apk на устройство. 
 - Убедитесь, что вы находитесь в корневой папке проекта
 - Запустите все тесты, выполнив следующую команду:
     `pytest -v tests`
+- Эта команда запустит все тесты в папке tests и выведет подробный вывод о прохождении каждого теста.
     
 ### Настройки проекта
 Для смены устройства необходимо зайти в файл conftest.py и сменить
